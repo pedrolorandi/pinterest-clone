@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/pinterest-clone/static/css/main.6b660b3e.css",
+    "main.js": "/pinterest-clone/static/js/main.5f0e76e9.js",
+    "static/media/magnifying-glass.png": "/pinterest-clone/static/media/magnifying-glass.53ec7b797ee750af4294.png",
+    "index.html": "/pinterest-clone/index.html",
+    "main.6b660b3e.css.map": "/pinterest-clone/static/css/main.6b660b3e.css.map",
+    "main.5f0e76e9.js.map": "/pinterest-clone/static/js/main.5f0e76e9.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6b660b3e.css",
+    "static/js/main.5f0e76e9.js"
+  ]
+}
