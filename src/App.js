@@ -12,6 +12,9 @@ import { PinContainer } from "./components/PinContainer.style";
 import { Title } from "./components/Title.style";
 import { User } from "./components/User.style";
 
+import logo from "./images/logo.png"
+import loading from "./images/loading.svg"
+
 const DUMMY_DATA = [
   {
      "id":"TJ_czkyRsWc",
@@ -3026,7 +3029,7 @@ function App() {
          <GlobalStyle/>
          <MenuBar>
          <Logo>
-            <img src="./images/logo.png" />
+            <img src={logo} />
          </Logo>
          <Form onSubmit={onFormSubmit}>
             <SearchBar placeholder="Search" onChange={e => setInput(e.target.value)} value={input} />
@@ -3035,7 +3038,7 @@ function App() {
          <PinGrid>
          {mappedPins}
          </PinGrid>
-         {isLoading && <Loading src='./images/loading.svg' />}
+         {isLoading && <Loading src={loading} />}
          {error && "Error: " + error}
       </>
    );
