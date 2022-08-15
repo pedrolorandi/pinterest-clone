@@ -3026,7 +3026,7 @@ function App() {
          <GlobalStyle/>
          <MenuBar>
          <Logo>
-            <img src="/images/logo.png" />
+            <img src="./public/images/logo.png" />
          </Logo>
          <Form onSubmit={onFormSubmit}>
             <SearchBar placeholder="Search" onChange={e => setInput(e.target.value)} value={input} />
@@ -3035,7 +3035,7 @@ function App() {
          <PinGrid>
          {mappedPins}
          </PinGrid>
-         {isLoading && <Loading src='/images/loading.svg' />}
+         {isLoading && <Loading src='./public/images/loading.svg' />}
          {error && "Error: " + error}
       </>
    );
