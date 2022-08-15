@@ -2,7 +2,7 @@
 
 ## Overview
 
-A simple "Rock, Paper, Scissors" game developed using HTML5, CSS3, and Vanilla JavaScript only!
+A Pinterest clone created with React. I used styled-components to create the grid and Unplash API to show the pins based on the user's search.
 
 ### Technologies Used
 <a href="#">
