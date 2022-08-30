@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/pinterest-clone/static/css/main.6b660b3e.css",
-    "main.js": "/pinterest-clone/static/js/main.a16240af.js",
+    "main.js": "/pinterest-clone/static/js/main.cad5d474.js",
     "static/media/logo.png": "/pinterest-clone/static/media/logo.d6fac9a6d65e9e6cfaa5.png",
     "static/media/magnifying-glass.png": "/pinterest-clone/static/media/magnifying-glass.53ec7b797ee750af4294.png",
     "static/media/loading.svg": "/pinterest-clone/static/media/loading.c5b9ce7ba5b29d2da4bb039f52769976.svg",
     "index.html": "/pinterest-clone/index.html",
     "main.6b660b3e.css.map": "/pinterest-clone/static/css/main.6b660b3e.css.map",
-    "main.a16240af.js.map": "/pinterest-clone/static/js/main.a16240af.js.map"
+    "main.cad5d474.js.map": "/pinterest-clone/static/js/main.cad5d474.js.map"
   },
   "entrypoints": [
     "static/css/main.6b660b3e.css",
-    "static/js/main.a16240af.js"
+    "static/js/main.cad5d474.js"
   ]
 }
