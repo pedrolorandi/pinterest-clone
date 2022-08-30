@@ -7,13 +7,20 @@ import { Logo } from "./components/Logo.style";
 import { Form } from "./components/Form.style";
 import { SearchBar } from "./components/SearchBar.style";
 import { PinGrid } from "./components/PinGrid.style";
-import { Pin } from "./components/Pin.style";
 import { PinContainer } from "./components/PinContainer.style";
+import { Pin } from "./components/Pin.style";
+import { PinInfo } from "./components/PinInfo.style";
+import { PinElements } from "./components/PinElements.style";
+import { SaveButton } from "./components/SaveButton.style";
+import { PageButton } from "./components/PageButton.style";
+import { DownloadButton } from "./components/DownloadButton.style";
 import { Title } from "./components/Title.style";
 import { User } from "./components/User.style";
 
 import logo from "./images/logo.png"
 import loading from "./images/loading.svg"
+import downloadIcon from "./images/download-icon.png"
+import goIcon from "./images/top-right-arrow.png"
 
 const DUMMY_DATA = [
   {
@@ -2978,6 +2985,8 @@ function App() {
    const [query, setQuery] = useState("");
    const [pageNumber, setPageNumber] = useState(1);
    
+   const pinWidth = 252;
+
    const {isLoading, error, pins} = useSearch(query, pageNumber);
    
    const observer = useRef()
@@ -2991,16 +3000,6 @@ function App() {
       if(node) observer.current.observe(node)
    }, [isLoading])
 
-   // useEffect(() => {
-   //    if(pins){
-   //       const observer = new IntersectionObserver((entries) => {
-   //          const entry = entries[pageNumber - 1];
-   //          setPinIsVisible(entry.isIntersecting);
-   //       })
-   //       observer.observe(lastPin.current)
-   //    }
-   // }, [pins])
-
    const onFormSubmit = (e) => {
       e.preventDefault();
       setQuery(input)
@@ -3011,14 +3010,32 @@ function App() {
    const mappedPins = pins && pins.map((pin, index) => (
       <PinContainer
          key={pin.id}
-         spanHeight={Math.round((295 * pin.height) / pin.width / 10 + 10)}
+         spanHeight={Math.round((pinWidth * pin.height) / pin.width / 10 + 10)}
+         pinWidth={pinWidth}
       >
          <Pin
          id={pin.id}
-         spanHeight={Math.round((295 * pin.height) / pin.width / 10)}
+         spanHeight={Math.round((pinWidth * pin.height) / pin.width / 10)}
          ref={(pins.length === index + 1) ? lastPin : null}
          background={pin.urls.regular}
-         />
+         pinWidth={pinWidth}
+         >
+            <PinInfo>
+               <PinElements>
+                  <SaveButton>
+                  Save
+                  </SaveButton>
+               </PinElements>
+               <PinElements>
+                  <PageButton background={goIcon}>
+                     {pin.user.username}
+                  </PageButton>
+                  <DownloadButton>
+                     <img src={downloadIcon} />
+                  </DownloadButton>
+               </PinElements>               
+            </PinInfo>
+         </Pin>
          {pin.description && <Title><span>{pin.description}</span></Title>}
          {pin.user && <User><img src={pin.user.profile_image.small} /><span>{pin.user.instagram_username}</span></User>}
       </PinContainer>
@@ -3035,7 +3052,9 @@ function App() {
             <SearchBar placeholder="Search" onChange={e => setInput(e.target.value)} value={input} />
          </Form>
          </MenuBar>
-         <PinGrid>
+         <PinGrid 
+            pinWidth={pinWidth}
+         >
          {mappedPins}
          </PinGrid>
          {isLoading && <Loading src={loading} />}
